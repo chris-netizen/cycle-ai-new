@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "530741367989",
+    "project_id": "cycle-ai-f1bf5",
+    "storage_bucket": "cycle-ai-f1bf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530741367989:android:c90c24ff8e3b2816c31afc",
+        "android_client_info": {
+          "package_name": "com.example.cycle_ai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530741367989-0vs6eg6ik1koc8lgjd5qq9cus3g96ulo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQsyBbWgB-8aGfHhzS4R9_3JJWOPZFczQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530741367989-0vs6eg6ik1koc8lgjd5qq9cus3g96ulo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
