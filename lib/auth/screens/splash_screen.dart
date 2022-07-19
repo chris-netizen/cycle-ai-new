@@ -1,8 +1,7 @@
-import 'package:cycle_ai/auth/screens/signin_page.dart';
 import 'package:flutter/material.dart';
 
 
-import '../../constants.dart';
+import '../../filesforimport.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -25,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const SignInPage();
+          return const LoginPage();
         },
       ),
     );
