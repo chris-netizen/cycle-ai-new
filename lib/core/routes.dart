@@ -5,7 +5,7 @@
 const String signInRoute = '/signIn';
 const String registerRoute = '/register';
 const String mainPage = '/main';
-// const String routineRoute = '/routine'
+const String createAccount = '/createAccount';
 // const String statsRoute = '/stats';
 // const String devicesRoute = '/devices';
 // const String lightRoute = '/light';
