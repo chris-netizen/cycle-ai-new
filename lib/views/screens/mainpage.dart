@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../filesforimport.dart';
 import 'Accounts.dart';
 import 'googleMaps.dart';
-import 'home_page.dart';
+import 'homepage.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -13,13 +13,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
-  List pages = [
-    const HomePage(),
-    const Accounts()
-  ];
+  List pages = [const HomePage(), const Accounts()];
   int currentIndex = 0;
-  void onTap(int index){
+  void onTap(int index) {
     setState(() {
       currentIndex = index;
     });
