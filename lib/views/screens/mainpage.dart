@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../filesforimport.dart';
 import 'Accounts.dart';
+import 'googleMaps.dart';
 import 'homepage.dart';
-
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -13,43 +13,42 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  List pages = [const HomePage(), const Accounts()];
   int currentIndex = 0;
-  final screens = [
-    const HomePage(),
-    const Accounts()
-  ];
+  void onTap(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: currentIndex,
-        children: screens,
-      ),
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap: (index) {
-            setState(
-              () {
-                currentIndex = index;
-              },
-            );
-          },
-          selectedItemColor: kMainPrimaryColor,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_filled,
-              ),
-              label: 'Home',
+        backgroundColor: Colors.white,
+        onTap: onTap,
+        currentIndex: currentIndex,
+        selectedItemColor: kMainPrimaryColor,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
+        elevation: 0,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_filled,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-              ),
-              label: 'Account',
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
             ),
-          ]),
+            label: 'Account',
+          ),
+        ],
+      ),
     );
   }
 }

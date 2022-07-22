@@ -36,3 +36,4 @@ class AppNavigator {
         arguments: arguments);
   }
 }
+
