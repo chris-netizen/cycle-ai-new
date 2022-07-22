@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:cycle_ai/core/navigator.dart';
 
-
-import '../../filesforimport.dart';
+import '../../constants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -11,23 +11,17 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
-  initState(){
+  initState() {
+    Future.delayed(const Duration(seconds: 2), () {
+      AppNavigator.navigateTo(signInRoute);
+    });
     super.initState();
-    _navigateToSignInPage();
   }
 
-  _navigateToSignInPage() async{
-    await Future.delayed(const Duration(milliseconds: 5000), () {});
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return const LoginPage();
-        },
-      ),
-    );
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -42,17 +36,18 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Text(
-              'CYCLE AI',
+              'CYCLE AI', //animate this
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
               ),
             ),
-            Text('The Place Where recyclers meet for a greener future',
+            Text(
+              'The Place Where recyclers meet for a greener future',
               style: TextStyle(
                 // fontFamily: ,
-                fontSize: 10,
+                fontSize: 13,
                 fontWeight: FontWeight.w300,
                 color: Colors.white,
               ),
