@@ -40,6 +40,8 @@ dependencies:
   cached_network_image: ^3.2.1
   google_fonts: ^3.0.1
   dio: ^4.0.6
+  equatable: ^2.0.3
+  firebase_auth: ^3.5.0
 
 dev_dependencies:
   flutter_test:
