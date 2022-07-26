@@ -7,18 +7,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../../common/firebase_enums.dart';
 import '../../common/widgets/constants.dart';
 
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class MailLogin extends StatefulWidget {
+  const MailLogin({Key? key}) : super(key: key);
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<MailLogin> createState() => _MailLoginState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _MailLoginState extends State<MailLogin> {
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController passwordController2 = TextEditingController();
 
   final FirebaseAuth auth = FirebaseAuth.instance;
 
@@ -29,24 +28,17 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         leading: null,
-        title: const Center(
-          child: Text('Create Account'),
-        ),
-        actions: const [],
+        title: const Text('                 Log In'),
       ),
       body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints viewportConstraints) {
             return SafeArea(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 120),
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minHeight: viewportConstraints.maxHeight,
-                  ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 50),
+                child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -62,7 +54,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         height: 15,
                       ),
                       const Text(
-                        'Create your account',
+                        'Login with mail',
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
@@ -125,23 +117,6 @@ class _SignUpPageState extends State<SignUpPage> {
                           const SizedBox(
                             height: 20,
                           ),
-                          const Text('Confirm Password'),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          TextField(
-                            controller: passwordController2,
-                            obscureText: true,
-                            keyboardType: TextInputType.visiblePassword,
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                BorderSide(width: 2, color: kMainPrimaryColor),
-                              ),
-                              hintText: 'Confirm Password',
-                            ),
-                          ),
                           const SizedBox(
                             height: 60,
                           ),
@@ -152,21 +127,11 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: TextButton(
                           onPressed: () async {
                             try {
-                              if (passwordController.text !=
-                                  passwordController2.text) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text('PassWords don\'t match'),
-                                  ),
-                                );
-                              } else {
-                                final newUser =
-                                await auth.createUserWithEmailAndPassword(
-                                    email: email, password: password);
-                                // ignore: unnecessary_null_comparison
-                                if (newUser != null) {
-                                  AppNavigator.navigateToAndReplace(mainPage);
-                                }
+                              final user = await auth.signInWithEmailAndPassword(
+                                  email: email, password: password);
+                              // ignore: unnecessary_null_comparison
+                              if (user != null) {
+                                AppNavigator.navigateToAndReplace(mainPage);
                               }
                             } on FirebaseAuthException catch (e) {
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -186,7 +151,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                           ),
                           child: const Text(
-                            'Create Account and Login',
+                            'Login',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),

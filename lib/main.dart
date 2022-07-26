@@ -1,9 +1,8 @@
-import 'package:cycle_ai/views/screens/googleMaps.dart';
+import 'package:cycle_ai/views/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'core/navigator.dart';
 import 'common/widgets/constants.dart';
-import 'dart:async';
+import 'core/navigator.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,15 +17,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-          title: 'CYCLE AI',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData.light().copyWith(
-            scaffoldBackgroundColor: Colors.white,
-            appBarTheme: const AppBarTheme(color: kMainPrimaryColor),
-          ),
-          home: const GoogleMapsPage(),
-          navigatorKey: AppNavigator.navKey,
-          onGenerateRoute: AppRouter.generateRoutes,
+      title: 'CYCLE AI',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light().copyWith(
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(color: kMainPrimaryColor),
+      ),
+      home: const SplashScreen(),
+      navigatorKey: AppNavigator.navKey,
+      onGenerateRoute: AppRouter.generateRoutes,
     );
   }
 }

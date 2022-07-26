@@ -1,4 +1,5 @@
 import 'dart:io' show Platform;
+import 'package:cycle_ai/views/screens/mail_login.dart';
 import 'package:cycle_ai/views/screens/mainpage.dart';
 import 'package:cycle_ai/views/screens/signup_page.dart';
 import 'package:cycle_ai/core/navigator.dart';
@@ -19,6 +20,11 @@ class AppRouter {
         return getPageRoute(
           settings: settings,
           view: const SignUpPage(),
+        );
+      case mailLogin:
+        return getPageRoute(
+          settings: settings,
+          view: const MailLogin(),
         );
       case mainPage:
         return getPageRoute(

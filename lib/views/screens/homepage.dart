@@ -1,6 +1,4 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,19 +8,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: const [
-            Card(
-              color: Colors.black,
-            ),
-          ],
-        ),
-      ),
+      body: Container(),
     );
   }
 }
