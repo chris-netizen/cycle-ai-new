@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../common/widgets/constants.dart';
 
 class Accounts extends StatelessWidget {
   const Accounts({Key? key}) : super(key: key);

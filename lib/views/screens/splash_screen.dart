@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cycle_ai/core/navigator.dart';
 
-import '../../constants.dart';
+import '../../common/widgets/constants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
