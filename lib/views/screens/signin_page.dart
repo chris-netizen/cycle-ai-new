@@ -1,18 +1,47 @@
-import 'package:cycle_ai/views/screens/mainpage.dart';
 import 'package:cycle_ai/constants.dart';
 import 'package:cycle_ai/core/navigator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
+import '../widgets/rounded_button.dart';
+
+class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
+
+  @override
+  State<SignInPage> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  late String email;
+
+  late String password;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kMainPrimaryColor,
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        leading: null,
+        title: const Center(
+          child: Text('            Log In'),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => AppNavigator.navigateTo(registerRoute),
+            child: const Text(
+              'Sign Up',
+              style: TextStyle(color: Colors.white),
+            ),
+          )
+        ],
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -21,89 +50,27 @@ class SignInPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w600,
-                    color: Colors.white,
+                    color: kMainPrimaryColor,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                RoundedButton(
+                  myColor: kMainPrimaryColor,
+                  myText: 'Log in with Mail',
+                  onPressed: () => AppNavigator.navigateTo(mailLogin),
                 ),
-                const Text(
-                  'SignIn to your account',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text('Email'),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Enter your email',
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Text('Password'),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      obscureText: true,
-                      keyboardType: TextInputType.visiblePassword,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Enter your Password',
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {
-                      AppNavigator.navigateTo(mainPage);
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue.shade400,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide.none,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                GestureDetector(
-                  onTap: () => AppNavigator.navigateTo(registerRoute),
-                  child: const Text(
-                    'Don\'t have an account? Create account!',
-                    style: TextStyle(),
-                  ),
-                )
+                RoundedButton(
+                    myColor: kMainPrimaryColor,
+                    myText: 'Log in with Google',
+                    onPressed: () => null),
+                RoundedButton(
+                    myColor: kMainPrimaryColor,
+                    myText: 'Log in with FaceBook',
+                    onPressed: () => null),
               ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
-

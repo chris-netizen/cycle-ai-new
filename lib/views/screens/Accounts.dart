@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
 import '../../constants.dart';
 
 class Accounts extends StatelessWidget {
@@ -13,8 +11,7 @@ class Accounts extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding:
-                const EdgeInsets.fromLTRB(16.0, 16.0, 0, 0),
+            padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
