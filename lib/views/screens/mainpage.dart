@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../filesforimport.dart';
 import 'Accounts.dart';
+<<<<<<< HEAD
+=======
+import 'googleMaps.dart';
+>>>>>>> parent of 9174130 (Merge pull request #3 from chris-netizen/mikesbranch)
 import 'homepage.dart';
 
 class MainPage extends StatefulWidget {

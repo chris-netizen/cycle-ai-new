@@ -1,3 +1,4 @@
+import 'package:cycle_ai/views/screens/mainpage.dart';
 import 'package:cycle_ai/views/screens/splash_screen.dart';
 import 'package:cycle_ai/views/screens/googleMaps.dart';
 import 'package:flutter/material.dart';
