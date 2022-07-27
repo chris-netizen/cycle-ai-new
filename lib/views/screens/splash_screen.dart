@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   initState() {
     Future.delayed(const Duration(seconds: 2), () {
-      AppNavigator.navigateToAndReplace(signInRoute);
+      AppNavigator.navigateTo(signInRoute);
     });
     super.initState();
   }
@@ -53,3 +53,4 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../filesforimport.dart';
-import 'accounts.dart';
-
+import 'Accounts.dart';
 import 'homepage.dart';
 
 class MainPage extends StatefulWidget {

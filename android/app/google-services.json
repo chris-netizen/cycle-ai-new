@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "129021527493",
-    "project_id": "cycle-ai-948f2",
-    "storage_bucket": "cycle-ai-948f2.appspot.com"
+    "project_number": "530741367989",
+    "project_id": "cycle-ai-f1bf5",
+    "storage_bucket": "cycle-ai-f1bf5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:129021527493:android:86b04a3c7704d9da9237ac",
+        "mobilesdk_app_id": "1:530741367989:android:c90c24ff8e3b2816c31afc",
         "android_client_info": {
-          "package_name": "com.mike.cycle_ai"
+          "package_name": "com.example.cycle_ai"
         }
       },
       "oauth_client": [
         {
-          "client_id": "129021527493-vhtg360qt3vk2j08vas19ohvc8oneicf.apps.googleusercontent.com",
+          "client_id": "530741367989-0vs6eg6ik1koc8lgjd5qq9cus3g96ulo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB0gvMjw8NGXenzuyxPwK0fSWM1Fc4vzyM"
+          "current_key": "AIzaSyBQsyBbWgB-8aGfHhzS4R9_3JJWOPZFczQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "129021527493-vhtg360qt3vk2j08vas19ohvc8oneicf.apps.googleusercontent.com",
+              "client_id": "530741367989-0vs6eg6ik1koc8lgjd5qq9cus3g96ulo.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
